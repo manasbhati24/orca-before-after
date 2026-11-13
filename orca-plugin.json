@@ -1,0 +1,23 @@
+{
+  "manifestVersion": 2,
+  "id": "my-orca-plugin",
+  "name": "My Orca Plugin",
+  "version": "0.1.0",
+  "description": "A sidebar panel built from Orca components.",
+  "engines": {
+    "orca": ">=1.4.246"
+  },
+  "execution": "sandboxed-ui",
+  "pluginApi": 1,
+  "contributes": {
+    "panels": [
+      {
+        "id": "my-orca-plugin",
+        "title": "My Orca Plugin",
+        "icon": "blocks",
+        "entry": "src/panel.tsx",
+        "ui": "components"
+      }
+    ]
+  }
+}
