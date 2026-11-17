@@ -2,7 +2,7 @@
   "manifestVersion": 2,
   "id": "before-after",
   "name": "Before / After",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Saves the Figma screens your agent changes and lets you blink between before and after versions.",
   "engines": {
     "orca": ">=1.4.248"

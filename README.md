@@ -7,6 +7,19 @@ change, or ask it to restore an older version.
 
 The full feature spec is in [FEATURES.md](FEATURES.md).
 
+## Install
+
+```sh
+orca plugin install manasbhati24/orca-before-after
+```
+
+Or find **Before / After** in Orca's plugin directory: https://orca.dev/plugins/manasbhati24/orca-before-after
+
+Orca asks you to approve its access. It runs a background worker; it watches agent status and
+Figma tool calls; it has private storage and secrets; and it can type into your terminals. Only
+the **Restore** and **Ask agent to explain** buttons type into a terminal, and only into an
+idle agent's.
+
 ## Set up (one line)
 
 The plugin saves the screenshots your agent takes through the Figma MCP, so no Figma token is
