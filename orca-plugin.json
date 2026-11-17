@@ -1,23 +1,36 @@
 {
   "manifestVersion": 2,
-  "id": "my-orca-plugin",
-  "name": "My Orca Plugin",
+  "id": "before-after",
+  "name": "Before / After",
   "version": "0.1.0",
-  "description": "A sidebar panel built from Orca components.",
+  "description": "Saves the Figma screens your agent changes and lets you blink between before and after versions.",
   "engines": {
-    "orca": ">=1.4.246"
+    "orca": ">=1.4.248"
   },
-  "execution": "sandboxed-ui",
+  "execution": "trusted-worker",
   "pluginApi": 1,
+  "main": "src/worker.ts",
   "contributes": {
     "panels": [
       {
-        "id": "my-orca-plugin",
-        "title": "My Orca Plugin",
-        "icon": "blocks",
+        "id": "before-after",
+        "title": "Before / After",
+        "icon": "layers",
         "entry": "src/panel.tsx",
         "ui": "components"
       }
-    ]
-  }
+    ],
+    "hooks": [
+      { "event": "agent.tool.after", "onError": "pass" },
+      { "event": "agent.prompt.before", "onError": "pass" }
+    ],
+    "events": [{ "on": "agent.status.changed" }]
+  },
+  "capabilities": [
+    { "kind": "storage:own" },
+    { "kind": "secrets:own" },
+    { "kind": "agent:read" },
+    { "kind": "workspace:read" },
+    { "kind": "terminal:send" }
+  ]
 }
